@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Elimina</title>
+
+<link rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+
+</head>
+
+<body>
+<div class="starter-template">
+<h2 th:if="${messaggio !=null}" th:text ="${messaggio}" th:value="${messaggio}"></h2>
+</div>
+
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="#">Pete.com</a>
+	</nav>
+
+	<main role="main" class="container">
+
+	<div class="starter-template">
+		<h2>Scegli il gicatore da eliminare:</h2>
+		<form th:action="@{/eliminaGioc}" method="POST">
+			
+				<p th:each="giocatore : ${listaGioc}">
+			
+			<input type="radio" name="id" th:value="${giocatore.getId()}" th:text="${giocatore}">
+			</p>
+
+			
+			 <input class="btn btn-primary" type="submit" value="Elimina">
+	</form>
+	</div>
+	
+
+
+	</main>
+	
+
+	<script type="text/javascript"
+		th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+</html>

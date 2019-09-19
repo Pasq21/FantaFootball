@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Prima Pagina</title>
+
+<link rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+
+</head>
+
+<body>
+<div class="starter-template">
+<h2 th:if="${messaggio !=null}" th:text ="${messaggio}" th:value="${messaggio}"></h2>
+</div>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="#">Pete.com</a>
+	</nav>
+
+	<main role="main" class="container">
+
+	<div class="starter-template">
+		<h2>Benvenuto in FantaFootball! </h2>
+		<form th:action="@{/menu}">
+			
+			<input type=radio name="scelta" th:value="1" checked> Inserisci giocatore<br>
+			<input type=radio name="scelta" th:value="2"> Modifica giocatore<br>
+			<input type=radio name="scelta" th:value="3"> Elimina giocatore<br>
+			<input type=radio name="scelta" th:value="4" >Visualizza tutti i giocatori<br>
+			<input type=radio name="scelta" th:value="5" >Visualizza giocatore per nome<br>
+			<input type=radio name="scelta" th:value="6" >Visualizza giocatore per ruolo<br>
+			<input type=radio name="scelta" th:value="7" >Visualizza giocatore per squadra<br>
+			<input type=radio name="scelta" th:value="8" >Cerca per quotazione<br><br>
+			 <input class="btn btn-primary" type="submit" value="submit">
+	</form>
+	</div>
+	
+
+
+	</main>
+	
+
+	<script type="text/javascript"
+		th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+</html>
